@@ -607,6 +607,13 @@
       "statusClass": "next",
       "description": "Kali-based security work and automation across everything above — scripting the toil away and learning how systems break so I can keep them standing.",
       "progress": 4
+    },
+    {
+      "title": "Local AI Inference Lab",
+      "status": "Queued",
+      "statusClass": "next",
+      "description": "Self-hosted AI on my own iron: RTX 3050 GPU passthrough on Proxmox, a local model served with llama.cpp, and a tok/s dashboard to watch it run like an operator. Talos Kubernetes and GitOps come in a later phase — experience-first, no datacenter GPUs needed.",
+      "progress": 4
     }
   ],
   "dojo_empty": {
