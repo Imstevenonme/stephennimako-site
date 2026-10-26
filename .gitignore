@@ -1,0 +1,23 @@
+# Secrets / local config — never commit
+config.json
+**/config.json
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Backups and scratch
+backups/
+backups-local/
+*.pre-visual-pass
+index.html.bak*
+*.bak
+
+# Rejected v2 build — not the live site source
+v2/
+
+# Python
+__pycache__/
+*.pyc

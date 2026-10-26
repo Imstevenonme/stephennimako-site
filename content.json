@@ -1,0 +1,752 @@
+{
+  "hero": {
+    "name": "Stephen Nimako Jr",
+    "role": "IT Support Engineer",
+    "roles": [
+      "IT Support Engineer",
+      "Sole IT for an Entire Site",
+      "Acting Team Lead",
+      "AWS Solutions Architect — Professional",
+      "Cisco CCNA",
+      "Infrastructure Engineer in the Making"
+    ],
+    "tagline": "**Infrastructure-first, security-bound:** building the career one passed project at a time.",
+    "intro": "Sole IT for an entire Amazon site in Austin, TX — acting team lead, primary on-call, and the person the building pages when anything goes down.",
+    "ctas": [
+      {
+        "label": "View R\u00e9sum\u00e9",
+        "href": "resume.pdf",
+        "style": "primary",
+        "icon": "doc",
+        "external": true
+      },
+      {
+        "label": "Connect on LinkedIn",
+        "href": "https://www.linkedin.com/in/stephen-nimako-jr-b248ba258",
+        "style": "primary",
+        "icon": "linkedin",
+        "external": true
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Imstevenonme",
+        "style": "ghost",
+        "icon": "github",
+        "external": true
+      },
+      {
+        "label": "Get in touch",
+        "href": "#contact",
+        "style": "ghost",
+        "icon": "mail",
+        "external": false
+      }
+    ],
+    "stats": [
+      {
+        "value": "7",
+        "suffix": "+",
+        "label": "Years in IT support & systems, Ghana → Nashville → Austin"
+      },
+      {
+        "value": "800",
+        "suffix": "+",
+        "label": "Cameras deployed in a single facility rollout at Amazon"
+      },
+      {
+        "value": "4",
+        "suffix": "",
+        "label": "Active certifications — AWS ×2, Cisco CCNA, CompTIA Network+"
+      },
+      {
+        "value": "3",
+        "suffix": "",
+        "label": "Clouds worked hands-on: AWS, Microsoft Azure, Google Cloud"
+      }
+    ]
+  },
+  "about": {
+    "heading": "About",
+    "note": "austin, tx",
+    "paragraphs": [
+      "I'm an IT Support Engineer at **Amazon in Austin, Texas**, the **sole IT point of contact for an entire site** — acting team lead for two IT Support II technicians and four equipment coordinators, primary on-call, and the escalation point operations leadership calls first. My world is real infrastructure: **AWS Outposts, the WAN room, Cisco Catalyst switching, Dell PowerEdge servers, domain controllers, DHCP, and IP migrations**.",
+      "Before Amazon, I spent two years at **National Seating & Mobility** acting as an internal MSP — branch-to-branch escalated network work, Azure and Microsoft 365 / Entra ID administration, Intune and endpoint management, in a HIPAA-governed healthcare environment. That followed desktop and endpoint roles in Nashville and Accra, Ghana, where I started in 2019.",
+      "My reputation is simple: **permanent fixes, not band-aids.** I trace recurring issues to root cause, kill them for good, and write the SOPs so the team resolves them at first touch. Now I'm widening the base — systems administration, networking, cloud, and automation, with security on top — through a foundations-first training program I call **the Dojo**."
+    ],
+    "facts": {
+      "title": "Quick facts",
+      "rows": [
+        {
+          "label": "Based in",
+          "value": "Austin, TX"
+        },
+        {
+          "label": "Current role",
+          "value": "IT Support Engineer, Amazon"
+        },
+        {
+          "label": "Focus",
+          "value": "Infrastructure · Networking · Cloud"
+        },
+        {
+          "label": "Direction",
+          "value": "Infrastructure Eng. + Security"
+        },
+        {
+          "label": "Studying",
+          "value": "BS Cloud & Network Eng. — WGU"
+        },
+        {
+          "label": "In the lab",
+          "value": "RHEL · Terraform · Proxmox"
+        }
+      ]
+    }
+  },
+  "experience": [
+    {
+      "company": "Amazon",
+      "role": "IT Support Engineer",
+      "period": "Feb 2026 — Present",
+      "location": "Austin, TX",
+      "current": true,
+      "bullets": [
+        "**Sole IT for the entire site** — acting team lead for 2 IT Support II technicians and 4 equipment coordinators, primary on-call, and the point of contact senior operations leadership escalates to.",
+        "Run site infrastructure end to end: **AWS Outposts**, the WAN room (AT&T carrier circuits, fiber plant, ISP/vendor coordination), **Cisco Catalyst 9200/9300** core and access switching, Dell towers and PowerEdge servers, and domain controllers.",
+        "Delivered an **800+ camera deployment** for the facility; own DHCP reservations, IP migrations, and thin-client provisioning across the site.",
+        "Known for **permanent fixes**: trace recurring issues to root cause and write the SOPs the team resolves them with at first touch. Ticketing in ServiceNow and SIMT."
+      ],
+      "tags": [
+        {
+          "label": "AWS Outposts",
+          "hot": true
+        },
+        {
+          "label": "Cisco Catalyst",
+          "hot": false
+        },
+        {
+          "label": "PowerEdge",
+          "hot": false
+        },
+        {
+          "label": "DHCP / IPAM",
+          "hot": false
+        },
+        {
+          "label": "Active Directory",
+          "hot": false
+        },
+        {
+          "label": "ServiceNow",
+          "hot": false
+        },
+        {
+          "label": "Team Leadership",
+          "hot": false
+        },
+        {
+          "label": "On-Call",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "company": "National Seating & Mobility",
+      "role": "IT Support Specialist",
+      "period": "Jun 2024 — Feb 2026",
+      "location": "United States",
+      "current": false,
+      "bullets": [
+        "Acted as an **internal MSP** — the branch-to-branch escalation point for network and systems issues across a multi-site healthcare provider.",
+        "Administered **Azure** (VM and device admin), **Microsoft 365 and Entra ID** (licensing, SharePoint, OneDrive, Teams), with PowerShell / Microsoft Graph and Power Automate / Power Apps in the toolkit.",
+        "Endpoint management with **Intune, System Center (SCCM), and Apple Business Manager**; HIPAA-trained, supporting systems under patient-privacy rules."
+      ],
+      "tags": [
+        {
+          "label": "Azure",
+          "hot": true
+        },
+        {
+          "label": "Entra ID",
+          "hot": false
+        },
+        {
+          "label": "Intune",
+          "hot": false
+        },
+        {
+          "label": "SCCM",
+          "hot": false
+        },
+        {
+          "label": "PowerShell",
+          "hot": false
+        },
+        {
+          "label": "Microsoft 365",
+          "hot": false
+        },
+        {
+          "label": "HIPAA",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "company": "ienjoy Home",
+      "role": "IT Support Technician",
+      "period": "Sep 2023 — Jun 2024",
+      "location": "Nashville, TN",
+      "current": false,
+      "bullets": [
+        "Front-line IT support — troubleshooting hardware, software, and connectivity issues for end users, with escalations documented and tracked through the ticketing queue."
+      ],
+      "tags": [
+        {
+          "label": "Desktop Support",
+          "hot": false
+        },
+        {
+          "label": "Windows / macOS",
+          "hot": false
+        },
+        {
+          "label": "Ticketing",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "company": "CompuGhana LTD",
+      "role": "Desktop Support Engineer",
+      "period": "Nov 2022 — Sep 2023",
+      "location": "Ghana",
+      "current": false,
+      "bullets": [
+        "Desktop support engineering for one of Ghana's largest electronics and IT retailers — diagnosing and repairing systems, supporting users, and keeping machines in service."
+      ],
+      "tags": [
+        {
+          "label": "Hardware Repair",
+          "hot": false
+        },
+        {
+          "label": "Desktop Support",
+          "hot": false
+        },
+        {
+          "label": "Imaging",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "company": "I9 Systems Inc",
+      "role": "IT Desktop Support",
+      "period": "Aug 2019 — Oct 2022",
+      "location": "Accra, Ghana",
+      "current": false,
+      "bullets": [
+        "Where the career started: three years of hands-on desktop support — builds, break/fix, user support, and the fundamentals everything since is built on."
+      ],
+      "tags": [
+        {
+          "label": "Desktop Support",
+          "hot": false
+        },
+        {
+          "label": "Break/Fix",
+          "hot": false
+        },
+        {
+          "label": "User Support",
+          "hot": false
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Cloud Platforms",
+      "blurb": "Hyperscalers in production, not just in courses.",
+      "group": "cloud",
+      "icon": "cloud",
+      "items": [
+        {
+          "label": "AWS",
+          "core": true
+        },
+        {
+          "label": "Microsoft Azure",
+          "core": true
+        },
+        {
+          "label": "Google Cloud",
+          "core": false
+        },
+        {
+          "label": "AWS Outposts",
+          "core": true
+        },
+        {
+          "label": "EC2 / VPC",
+          "core": false
+        },
+        {
+          "label": "Azure VMs",
+          "core": false
+        },
+        {
+          "label": "IAM",
+          "core": false
+        }
+      ]
+    },
+    {
+      "category": "Networking",
+      "blurb": "From the WAN room to the access switch — the full chain.",
+      "group": "network",
+      "icon": "network",
+      "items": [
+        {
+          "label": "Cisco Catalyst 9200/9300",
+          "core": true
+        },
+        {
+          "label": "Switching & Routing",
+          "core": true
+        },
+        {
+          "label": "DHCP / DNS",
+          "core": true
+        },
+        {
+          "label": "IP Migrations",
+          "core": false
+        },
+        {
+          "label": "WAN / Carrier Circuits",
+          "core": false
+        },
+        {
+          "label": "Fiber Plant",
+          "core": false
+        },
+        {
+          "label": "VLANs",
+          "core": false
+        }
+      ]
+    },
+    {
+      "category": "Identity & Endpoint",
+      "blurb": "Nine-plus years living in Microsoft identity and device fleets.",
+      "group": "endpoint",
+      "icon": "endpoint",
+      "items": [
+        {
+          "label": "Active Directory",
+          "core": true
+        },
+        {
+          "label": "Entra ID",
+          "core": true
+        },
+        {
+          "label": "Intune",
+          "core": true
+        },
+        {
+          "label": "SCCM / MECM",
+          "core": false
+        },
+        {
+          "label": "Apple Business Manager",
+          "core": false
+        },
+        {
+          "label": "Group Policy",
+          "core": false
+        },
+        {
+          "label": "Windows & macOS Fleets",
+          "core": false
+        }
+      ]
+    },
+    {
+      "category": "Systems & Tools",
+      "blurb": "The daily operating system of enterprise IT.",
+      "group": "systems",
+      "icon": "systems",
+      "items": [
+        {
+          "label": "PowerShell",
+          "core": true
+        },
+        {
+          "label": "ServiceNow",
+          "core": true
+        },
+        {
+          "label": "Microsoft 365",
+          "core": false
+        },
+        {
+          "label": "SharePoint / OneDrive / Teams",
+          "core": false
+        },
+        {
+          "label": "Power BI",
+          "core": false
+        },
+        {
+          "label": "Power Automate",
+          "core": false
+        },
+        {
+          "label": "Microsoft Graph",
+          "core": false
+        },
+        {
+          "label": "Dell PowerEdge",
+          "core": false
+        }
+      ]
+    },
+    {
+      "category": "In the Lab — Building Now",
+      "blurb": "The Dojo stack: foundations-first, project by project.",
+      "group": "lab",
+      "icon": "lab",
+      "items": [
+        {
+          "label": "RHEL / Linux Admin",
+          "core": true
+        },
+        {
+          "label": "Terraform",
+          "core": true
+        },
+        {
+          "label": "Proxmox Virtualization",
+          "core": false
+        },
+        {
+          "label": "Docker",
+          "core": false
+        },
+        {
+          "label": "Cisco IOS",
+          "core": false
+        },
+        {
+          "label": "TrueNAS / ZFS",
+          "core": false
+        },
+        {
+          "label": "Bash",
+          "core": false
+        }
+      ]
+    },
+    {
+      "category": "How I Work",
+      "blurb": "The habits behind the tickets.",
+      "group": "cloud endpoint systems",
+      "icon": "work",
+      "items": [
+        {
+          "label": "Root-Cause Analysis",
+          "core": true
+        },
+        {
+          "label": "Permanent Fixes",
+          "core": true
+        },
+        {
+          "label": "SOP Writing",
+          "core": false
+        },
+        {
+          "label": "Incident Ownership",
+          "core": false
+        },
+        {
+          "label": "Vendor Coordination",
+          "core": false
+        },
+        {
+          "label": "Documentation-First",
+          "core": false
+        }
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect — Professional",
+      "issuer": "Amazon Web Services",
+      "date": null,
+      "badge": "SA·P",
+      "badgeAccent": true,
+      "description": "The advanced AWS architecture credential — designing distributed, highly available, cost-optimized systems on AWS.",
+      "meta": "Status: Active",
+      "credentialId": null
+    },
+    {
+      "name": "Cisco Certified Network Associate (200-301)",
+      "issuer": "Cisco",
+      "date": null,
+      "badge": "CCNA",
+      "badgeAccent": false,
+      "description": "Routing, switching, IP services, security fundamentals, and automation — earned September 2026.",
+      "meta": "Issued: Sep 24, 2026 · Valid through Sep 24, 2029 · Verification ID: NECDZVMCN896PDJ2",
+      "credentialId": "NECDZVMCN896PDJ2"
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": null,
+      "badge": "CP",
+      "badgeAccent": false,
+      "description": "Cloud concepts, AWS services, security, architecture, and billing — the foundation under the Professional.",
+      "meta": "Status: Active",
+      "credentialId": null
+    },
+    {
+      "name": "CompTIA Network+",
+      "issuer": "CompTIA",
+      "date": null,
+      "badge": "N+",
+      "badgeAccent": false,
+      "description": "Networking concepts, infrastructure, operations, and troubleshooting across wired and wireless networks.",
+      "meta": "Status: Active",
+      "credentialId": null
+    }
+  ],
+  "education": {
+    "school": "Western Governors University",
+    "degree": "B.S. Cloud and Network Engineering",
+    "period": "In progress since June 2026, expected February 2027",
+    "mark": "WGU",
+    "description": "In progress since June 2026, expected February 2027. A degree built for exactly where this career is going — cloud architecture, network engineering, and the certifications woven through both.",
+    "details": [
+      "Expected Feb 2027",
+      "GPA 3.5",
+      "Cloud + Network Engineering"
+    ],
+    "tags": [
+      {
+        "label": "Expected Feb 2027",
+        "hot": false
+      },
+      {
+        "label": "GPA 3.5",
+        "hot": false
+      },
+      {
+        "label": "Cloud + Network Engineering",
+        "hot": true
+      }
+    ]
+  },
+  "dojo": [],
+  "dojo_loop": {
+    "title": "The Mastery Loop",
+    "text": "One loop per project, no shortcuts. The bar doesn't drop — an unfinished loop isn't done.",
+    "steps": [
+      "1 · Brief",
+      "2 · Build",
+      "3 · Document",
+      "4 · Quiz",
+      "5 · Teach-back",
+      "6 · Publish here"
+    ]
+  },
+  "dojo_tracks": [
+    {
+      "title": "Hardware Foundations",
+      "status": "Starting",
+      "statusClass": "now",
+      "description": "A+ depth without the courseware: components, builds, diagnostics — physical teardowns where possible, virtual builds where not. Project 1 kicks off here.",
+      "progress": 8
+    },
+    {
+      "title": "Linux & RHEL Administration",
+      "status": "Queued",
+      "statusClass": "next",
+      "description": "RHEL is the primary distro — the enterprise sysadmin track. Services, storage, users, hardening, troubleshooting from a blank console.",
+      "progress": 4
+    },
+    {
+      "title": "Networking — Full Chain",
+      "status": "Queued",
+      "statusClass": "next",
+      "description": "End-to-end scenarios, modem → edge router → core → access → servers. Cisco IOS and SG300 CLI, MDF/IDF reality, not single-device drills.",
+      "progress": 4
+    },
+    {
+      "title": "AWS + Terraform",
+      "status": "Queued",
+      "statusClass": "next",
+      "description": "The IaC rule: if it was built in the console, it gets rebuilt in Terraform. No click-only builds — five Terraform projects and an IaC capstone.",
+      "progress": 4
+    },
+    {
+      "title": "Azure & Hybrid AD",
+      "status": "Queued",
+      "statusClass": "next",
+      "description": "AZ-104, then AZ-800/801: Windows Server DC + Entra Connect + site-to-site VPN to Azure — the hybrid identity stack enterprises actually run.",
+      "progress": 4
+    },
+    {
+      "title": "Security & Automation",
+      "status": "Queued",
+      "statusClass": "next",
+      "description": "Kali-based security work and automation across everything above — scripting the toil away and learning how systems break so I can keep them standing.",
+      "progress": 4
+    }
+  ],
+  "dojo_empty": {
+    "mono": "// build_log — entries: 0",
+    "text": "**Build Log #1 lands here soon.** Passed projects get published as build-log entries — what I built, what broke, what I fixed, in my own words. First up: Project 1, hardware foundations."
+  },
+  "path": {
+    "heading": "The Path",
+    "note": "2026 — 2040",
+    "intro": "The 10–15 year plan: every phase makes the next one harder to replace. Support → infrastructure → infrastructure with security. Versatility, built deliberately.",
+    "milestones": [
+      {
+        "when": "2026 — 2027",
+        "title": "The Lead Title & the Degree",
+        "description": "Finish the WGU B.S. in Cloud and Network Engineering (expected Feb 2027) while stepping into a lead-level support role — deeper scope, bigger systems, first architecture conversations. CCNP study begins off the fresh CCNA.",
+        "status": null,
+        "tags": [
+          {
+            "label": "WGU · Feb 2027",
+            "hot": true
+          },
+          {
+            "label": "CCNP (OnVUE)",
+            "hot": false
+          },
+          {
+            "label": "Dojo: foundations",
+            "hot": false
+          }
+        ]
+      },
+      {
+        "when": "2027 — 2029",
+        "title": "Infrastructure Engineer",
+        "description": "The pivot from support to building: Terraform everywhere, Kubernetes fundamentals, and the Azure hybrid path — AZ-104, then AZ-800/801, with AZ-305 and AZ-700 behind them. The RHEL lab becomes the daily driver.",
+        "status": null,
+        "tags": [
+          {
+            "label": "AZ-104 → AZ-800/801",
+            "hot": false
+          },
+          {
+            "label": "Terraform",
+            "hot": false
+          },
+          {
+            "label": "Kubernetes",
+            "hot": false
+          },
+          {
+            "label": "RHEL",
+            "hot": false
+          }
+        ]
+      },
+      {
+        "when": "2029 — 2032",
+        "title": "Infrastructure + Security",
+        "description": "Layer security on top of the infrastructure base — CISSP once the domain years are in hand. The goal state: an infrastructure engineer who does security, operating in cloud, trusted with the hard incidents.",
+        "status": null,
+        "tags": [
+          {
+            "label": "CISSP",
+            "hot": false
+          },
+          {
+            "label": "Security engineering",
+            "hot": false
+          },
+          {
+            "label": "Cloud security",
+            "hot": false
+          }
+        ]
+      },
+      {
+        "when": "2032 +",
+        "title": "Principal / Architect",
+        "description": "Principal or staff-level engineering, solutions architecture, or technical leadership — the multi-domain story written all the way down: support, systems, networks, cloud, security. Built in the open, one documented project at a time.",
+        "status": null,
+        "tags": [
+          {
+            "label": "Principal / Staff",
+            "hot": false
+          },
+          {
+            "label": "Solutions Architecture",
+            "hot": false
+          },
+          {
+            "label": "Technical Leadership",
+            "hot": false
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Contact",
+    "subheading": "Let's talk infrastructure.",
+    "text": "Open to senior support, systems administration, and infrastructure roles — Austin, TX, remote-US, or hybrid. The fastest way to reach me is LinkedIn or email.",
+    "email": "stephennimakojr@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/stephen-nimako-jr-b248ba258",
+    "github": "https://github.com/Imstevenonme"
+  },
+  "sections": {
+    "about": {
+      "heading": "About",
+      "note": "austin, tx"
+    },
+    "experience": {
+      "heading": "Experience",
+      "note": "2019 — present",
+      "sub": "Seven years across three countries' worth of IT floors — desktop support in Accra, endpoint work in Nashville, and site-wide infrastructure ownership in Austin."
+    },
+    "skills": {
+      "heading": "Skills",
+      "note": "tap a group to spotlight it",
+      "sub": "The stack I run today — plus the lab stack I'm building the next decade on. Gold pills are daily drivers."
+    },
+    "certifications": {
+      "heading": "Certifications",
+      "note": "4 active",
+      "sub": "Verified credentials across cloud architecture, networking, and network fundamentals."
+    },
+    "education": {
+      "heading": "Education"
+    },
+    "dojo": {
+      "heading": "The Dojo",
+      "note": "build · document · prove",
+      "sub": "My training ground: foundations-first, learned by building. Every project is briefed, built in the lab, documented in my own words, then proven under pressure — blank-page recall, timed quizzes, deliberate break-and-fix, and a voice teach-back. Nothing counts until it's passed twice at 100%."
+    },
+    "path": {
+      "heading": "The Path",
+      "note": "2026 — 2040",
+      "sub": "The 10–15 year plan: every phase makes the next one harder to replace. Support → infrastructure → infrastructure with security. Versatility, built deliberately."
+    },
+    "contact": {
+      "heading": "Contact"
+    }
+  }
+}
