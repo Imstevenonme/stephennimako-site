@@ -414,7 +414,7 @@
     if (!root || !h) return;
     var photo = document.createElement("img");
     photo.className = "hero-photo";
-    photo.src = "profile.jpg";
+    photo.src = "profile.jpg?v=20261103";
     photo.alt = "Stephen Nimako Jr";
     photo.onerror = function() {
       var fallback = el("span", "monogram", "SN");
@@ -431,7 +431,7 @@
     lb.setAttribute("aria-modal", "true");
     lb.setAttribute("aria-label", "Stephen Nimako Jr photo preview");
     var lbImg = document.createElement("img");
-    lbImg.src = "profile.jpg";
+    lbImg.src = "profile.jpg?v=20261103";
     lbImg.alt = "Stephen Nimako Jr";
     var lbClose = el("button", "lb-close", "\u00d7");
     lbClose.setAttribute("aria-label", "Close photo preview");
