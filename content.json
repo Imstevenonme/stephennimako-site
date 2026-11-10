@@ -1,17 +1,16 @@
 {
   "hero": {
     "name": "Stephen Nimako Jr",
-    "role": "IT Support Engineer",
+    "role": "Senior Desktop Support Engineer",
     "roles": [
-      "IT Support Engineer",
-      "Sole IT for an Entire Site",
-      "Acting Team Lead",
+      "Senior Desktop Support Engineer",
+      "Quest Software — Austin, TX",
       "AWS Solutions Architect — Professional",
       "Cisco CCNA",
       "Infrastructure Engineer in the Making"
     ],
     "tagline": "**Infrastructure-first, security-bound:** building the career one passed project at a time.",
-    "intro": "Sole IT for an entire Amazon site in Austin, TX — acting team lead, primary on-call, and the person the building pages when anything goes down.",
+    "intro": "Senior Desktop Support Engineer at Quest Software in Austin, TX — senior-level desktop and endpoint support, and the escalation point when the standard fixes aren't enough.",
     "ctas": [
       {
         "label": "View R\u00e9sum\u00e9",
@@ -69,7 +68,7 @@
     "heading": "About",
     "note": "austin, tx",
     "paragraphs": [
-      "I'm an IT Support Engineer at **Amazon in Austin, Texas**, the **sole IT point of contact for an entire site** — acting team lead for two IT Support II technicians and four equipment coordinators, primary on-call, and the escalation point operations leadership calls first. My world is real infrastructure: **AWS Outposts, the WAN room, Cisco Catalyst switching, Dell PowerEdge servers, domain controllers, DHCP, and IP migrations**.",
+      "I'm a **Senior Desktop Support Engineer at Quest Software in Austin, Texas** — senior-level desktop and endpoint support, and the escalation point for the issues that don't close at first touch. Before Quest, I was an IT Support Engineer at **Amazon**, the **sole IT point of contact for an entire site** — acting team lead for two IT Support II technicians and four equipment coordinators, primary on-call, and the escalation point operations leadership called first. My world is real infrastructure: **AWS Outposts, the WAN room, Cisco Catalyst switching, Dell PowerEdge servers, domain controllers, DHCP, and IP migrations**.",
       "Before Amazon, I spent two years at **National Seating & Mobility** acting as an internal MSP — branch-to-branch escalated network work, Azure and Microsoft 365 / Entra ID administration, Intune and endpoint management, in a HIPAA-governed healthcare environment. That followed desktop and endpoint roles in Nashville and Accra, Ghana, where I started in 2019.",
       "My reputation is simple: **permanent fixes, not band-aids.** I trace recurring issues to root cause, kill them for good, and write the SOPs so the team resolves them at first touch. Now I'm widening the base — systems administration, networking, cloud, and automation, with security on top — through a foundations-first training program I call **the Dojo**."
     ],
@@ -82,7 +81,7 @@
         },
         {
           "label": "Current role",
-          "value": "IT Support Engineer, Amazon"
+          "value": "Senior Desktop Support Engineer, Quest Software"
         },
         {
           "label": "Focus",
@@ -105,11 +104,49 @@
   },
   "experience": [
     {
-      "company": "Amazon",
-      "role": "IT Support Engineer",
-      "period": "Feb 2026 — Present",
+      "company": "Quest Software",
+      "role": "Senior Desktop Support Engineer",
+      "period": "Nov 2026 — Present",
       "location": "Austin, TX",
       "current": true,
+      "bullets": [
+        "**Senior desktop support** for Quest Software's Austin site — advanced endpoint troubleshooting and the escalation point for issues that don't resolve at first touch.",
+        "Deploy, image, and maintain workstations across their lifecycle — including new-hire setup, so people are productive on day one.",
+        "Support users across **Windows, Microsoft 365, and Active Directory / Entra ID** — root-cause fixes and clear documentation over workarounds."
+      ],
+      "tags": [
+        {
+          "label": "Desktop Support",
+          "hot": true
+        },
+        {
+          "label": "Endpoint Management",
+          "hot": false
+        },
+        {
+          "label": "Windows",
+          "hot": false
+        },
+        {
+          "label": "Microsoft 365",
+          "hot": false
+        },
+        {
+          "label": "Entra ID",
+          "hot": false
+        },
+        {
+          "label": "Escalations",
+          "hot": false
+        }
+      ]
+    },
+    {
+      "company": "Amazon",
+      "role": "IT Support Engineer",
+      "period": "Feb 2026 — Nov 2026",
+      "location": "Austin, TX",
+      "current": false,
       "bullets": [
         "**Sole IT for the entire site** — acting team lead for 2 IT Support II technicians and 4 equipment coordinators, primary on-call, and the point of contact senior operations leadership escalates to.",
         "Run site infrastructure end to end: **AWS Outposts**, the WAN room (AT&T carrier circuits, fiber plant, ISP/vendor coordination), **Cisco Catalyst 9200/9300** core and access switching, Dell towers and PowerEdge servers, and domain controllers.",

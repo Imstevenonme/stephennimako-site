@@ -9,7 +9,7 @@ The only intentional text split is `hero.intro` / `hero.tagline` (see below).
 
 - **Bold:** the original used `<strong>` inside paragraphs and bullets.
   In JSON this is written as `**double asterisks**` (e.g.
-  `"I'm an IT Support Engineer at **Amazon in Austin, Texas**, …"`).
+  `"I'm a **Senior Desktop Support Engineer at Quest Software in Austin, Texas**, …"`).
   The renderer escapes the text first, then converts `**…**` to `<strong>` —
   JSON text can never inject raw HTML.
 - **Escaping:** every JSON string reaches the DOM via `textContent` (or the
@@ -45,8 +45,8 @@ The only intentional text split is `hero.intro` / `hero.tagline` (see below).
 | field | type | notes |
 |---|---|---|
 | `name` | string | `"Stephen Nimako Jr"` — rendered as `Stephen Nimako <span class="jr">Jr</span>` (trailing ` Jr` becomes the styled suffix) |
-| `role` | string | static role line text (`"IT Support Engineer"`); equals `roles[0]` |
-| `roles` | string[] | the 6 typewriter-rotator phrases |
+| `role` | string | static role line text (`"Senior Desktop Support Engineer"`); equals `roles[0]` |
+| `roles` | string[] | the 5 typewriter-rotator phrases |
 | `tagline` | string | the bold punchline from the hero sub-copy (`**Infrastructure-first, security-bound:** …`) |
 | `intro` | string | the rest of the hero sub-copy. The original was one `<p>`; it is split here so the schema's `tagline`/`intro` pair both have verbatim text |
 | `ctas` | array | `{ "label", "href", "style": "primary\|ghost", "icon": "linkedin\|github\|mail\|doc", "external": bool }`. `primary` → `btn-solid`, `ghost` → `btn-ghost`; `external` adds `target="_blank" rel="noopener"`. The first CTA is the résumé: `{ "label": "View Résumé", "href": "resume.pdf", "style": "primary", "icon": "doc", "external": true }` — `resume.pdf` is the master résumé served alongside the page |
@@ -58,12 +58,12 @@ The only intentional text split is `hero.intro` / `hero.tagline` (see below).
 heading), `paragraphs` (3, with `**bold**`), and `facts`: `{ "title": "Quick facts",
 "rows": [{ "label", "value" }] }` — the 6-row definition list card.
 
-### `experience` — 5 entries
+### `experience` — 6 entries
 
 | field | notes |
 |---|---|
-| `company` / `role` | e.g. `"Amazon"` / `"IT Support Engineer"` |
-| `period` / `location` | e.g. `"Feb 2026 — Present"` / `"Austin, TX"` (rendered with a `<br>` between) |
+| `company` / `role` | e.g. `"Quest Software"` / `"Senior Desktop Support Engineer"` |
+| `period` / `location` | e.g. `"Nov 2026 — Present"` / `"Austin, TX"` (rendered with a `<br>` between) |
 | `current` | bool — renders the `<span class="badge-now">Current</span>` badge and the `current` class on the article |
 | `bullets` | string[] with `**bold**` |
 | `tags` | `{ "label", "hot": bool }` — `hot` renders `class="tag hot"` (gold pill) |
