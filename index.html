@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>Stephen Nimako Jr — IT Infrastructure &amp; Support Engineering</title>
     <meta name="description" content="Stephen Nimako Jr — IT Support Engineer & infrastructure specialist in Austin, TX. AWS Solutions Architect Professional, Cisco CCNA. Building toward infrastructure engineering with a security focus." />
     <meta property="og:type" content="website" />
@@ -301,6 +304,15 @@
       .btn-line { background: transparent; color: var(--ink); border-color: var(--line-strong); }
       .btn-line:hover { border-color: var(--accent); color: var(--accent); }
       .copied-note { margin-top: 14px; font-size: 13px; color: var(--accent); min-height: 1.4em; }
+
+      /* ---------- responsive hardening (2026-11-10) ---------- */
+      html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      img, video { max-width: 100%; }
+      .mono { overflow-wrap: anywhere; }
+      @media (max-width: 640px) {
+        .dojo-banner { flex-direction: column; align-items: stretch; }
+        .dojo-banner img { width: 100%; height: 180px; }
+      }
 </style>
   </head>
   <body>
