@@ -53,9 +53,9 @@
         "label": "Cameras deployed in a single facility rollout at Amazon"
       },
       {
-        "value": "5",
+        "value": "4",
         "suffix": "",
-        "label": "Active certifications — AWS ×2, Cisco CCNA, CompTIA Network+ & A+"
+        "label": "Active certifications — AWS ×2, Cisco CCNA, CompTIA Network+"
       },
       {
         "value": "3",
@@ -564,17 +564,6 @@
       "description": "Networking concepts, infrastructure, operations, and troubleshooting across wired and wireless networks.",
       "meta": "Status: Active",
       "credentialId": null
-    },
-    {
-      "name": "CompTIA A+",
-      "issuer": "CompTIA",
-      "date": null,
-      "badge": "A+",
-      "badgeImg": "badges/comptia-a-plus.png",
-      "badgeAccent": false,
-      "description": "Hardware, operating systems, troubleshooting, and security fundamentals — the foundation credential under everything since.",
-      "meta": "Status: Active",
-      "credentialId": null
     }
   ],
   "education": {
@@ -787,7 +776,7 @@
     },
     "certifications": {
       "heading": "Certifications",
-      "note": "5 active",
+      "note": "4 active",
       "sub": "Verified credentials across cloud architecture, networking, and IT fundamentals."
     },
     "education": {
