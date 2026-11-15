@@ -53,9 +53,9 @@
         "label": "Cameras deployed in a single facility rollout at Amazon"
       },
       {
-        "value": "4",
+        "value": "5",
         "suffix": "",
-        "label": "Active certifications — AWS ×2, Cisco CCNA, CompTIA Network+"
+        "label": "Active certifications — AWS ×2, Cisco CCNA, CompTIA Network+ & A+"
       },
       {
         "value": "3",
@@ -561,6 +561,16 @@
       "description": "Networking concepts, infrastructure, operations, and troubleshooting across wired and wireless networks.",
       "meta": "Status: Active",
       "credentialId": null
+    },
+    {
+      "name": "CompTIA A+",
+      "issuer": "CompTIA",
+      "date": null,
+      "badge": "A+",
+      "badgeAccent": false,
+      "description": "Hardware, operating systems, troubleshooting, and security fundamentals — the foundation credential under everything since.",
+      "meta": "Status: Active",
+      "credentialId": null
     }
   ],
   "education": {
@@ -646,10 +656,10 @@
       "progress": 4
     },
     {
-      "title": "Local AI Inference Lab",
+      "title": "Cloud Agent Fleet",
       "status": "Queued",
       "statusClass": "next",
-      "description": "Self-hosted AI on my own iron: RTX 3050 GPU passthrough on Proxmox, a local model served with llama.cpp, and a tok/s dashboard to watch it run like an operator. Talos Kubernetes and GitOps come in a later phase — experience-first, no datacenter GPUs needed.",
+      "description": "No local AI box — the brain runs in the cloud: a fleet of agents in its own VM on my Dell Proxmox host, capped at $35/mo, with destructive actions gated behind a phone approval. My iron hosts the fleet; the thinking happens in the cloud.",
       "progress": 4
     }
   ],
@@ -664,8 +674,8 @@
     "milestones": [
       {
         "when": "2026 — 2027",
-        "title": "The Lead Title & the Degree",
-        "description": "Finish the WGU B.S. in Cloud and Network Engineering (expected Feb 2027) while stepping into a lead-level support role — deeper scope, bigger systems, first architecture conversations. CCNP study begins off the fresh CCNA.",
+        "title": "The Senior Title & the Degree",
+        "description": "Finish the WGU B.S. in Cloud and Network Engineering (expected Feb 2027) while working as a Senior Desktop Support Engineer at Quest Software — deeper scope, bigger systems, first architecture conversations. CCNP study begins off the fresh CCNA.",
         "status": null,
         "tags": [
           {
@@ -773,8 +783,8 @@
     },
     "certifications": {
       "heading": "Certifications",
-      "note": "4 active",
-      "sub": "Verified credentials across cloud architecture, networking, and network fundamentals."
+      "note": "5 active",
+      "sub": "Verified credentials across cloud architecture, networking, and IT fundamentals."
     },
     "education": {
       "heading": "Education"

@@ -313,6 +313,46 @@
         .dojo-banner { flex-direction: column; align-items: stretch; }
         .dojo-banner img { width: 100%; height: 180px; }
       }
+
+      /* ---------- interaction + motion pass (2026-11-15) ---------- */
+      /* tappable cards: lift on hover, press on touch, gold ring */
+      .tap { cursor: pointer; transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease; -webkit-tap-highlight-color: transparent; }
+      .tap:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+      @media (hover: hover) {
+        .tap:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 18px 38px rgba(10, 10, 15, 0.22), 0 0 0 1px var(--accent); }
+      }
+      .tap:active { transform: scale(0.985); }
+      .card-hint { display: inline-block; margin-top: 12px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+      .card-hint::after { content: " +"; color: var(--accent); font-weight: 700; }
+      @media (hover: hover) { .tap:hover .card-hint { color: var(--accent); } }
+
+      /* hero entrance */
+      @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+      .hero-inner > * { animation: rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+      .hero-inner > *:nth-child(2) { animation-delay: 0.08s; }
+      .hero-inner > *:nth-child(3) { animation-delay: 0.16s; }
+      .hero-inner > *:nth-child(4) { animation-delay: 0.24s; }
+      .hero-inner > *:nth-child(5) { animation-delay: 0.32s; }
+
+      /* card detail modal (pop-out) */
+      .modal-backdrop { position: fixed; inset: 0; z-index: 300; display: flex; align-items: center; justify-content: center; background: rgba(4, 5, 8, 0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: 18px; }
+      .modal-backdrop[hidden] { display: none; }
+      .modal { position: relative; width: 100%; max-width: 560px; max-height: 84vh; overflow-y: auto; background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); border-radius: 16px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); padding: 26px; animation: pop 0.28s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+      @keyframes pop { from { opacity: 0; transform: translateY(12px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+      .modal-close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink); font-size: 22px; line-height: 1; cursor: pointer; display: grid; place-items: center; }
+      .modal-close:hover { border-color: var(--accent); color: var(--accent); }
+      .modal-kicker { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; padding-right: 44px; }
+      .modal-title { font-size: 21px; font-weight: 800; padding-right: 44px; }
+      .modal-text { color: var(--ink-2); font-size: 15px; margin: 12px 0 0; }
+      .modal-text strong { color: var(--ink); }
+      .modal-list { margin: 14px 0 0; padding-left: 20px; color: var(--ink-2); font-size: 15px; }
+      .modal-list li { margin: 0 0 8px; }
+      .modal-list li strong { color: var(--ink); }
+      .modal-note { font-size: 12.5px; color: var(--ink-3); margin: 14px 0 0; }
+      .modal-cert-top { display: flex; gap: 18px; align-items: flex-start; }
+      .modal-cert-top .modal-title { padding-right: 0; }
+      .modal .bar { margin-top: 14px; }
+      .modal .status { margin-top: 10px; }
 </style>
   </head>
   <body>
@@ -432,6 +472,148 @@
     return p;
   }
 
+  /* ---- card detail modal (pop-out): one reusable dialog for every tappable card ---- */
+  var modalEl = null, modalBodyEl = null, lastFocusEl = null;
+  function buildModal() {
+    if (modalEl) return;
+    modalEl = el("div", "modal-backdrop");
+    modalEl.setAttribute("hidden", "");
+    var box = el("div", "modal");
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", "Card details");
+    var close = el("button", "modal-close", "\u00d7");
+    close.type = "button";
+    close.setAttribute("aria-label", "Close details");
+    close.addEventListener("click", closeModal);
+    modalBodyEl = el("div", "modal-body");
+    box.appendChild(close);
+    box.appendChild(modalBodyEl);
+    modalEl.appendChild(box);
+    modalEl.addEventListener("click", function (ev) { if (ev.target === modalEl) closeModal(); });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && modalEl && !modalEl.hasAttribute("hidden")) closeModal();
+    });
+    document.body.appendChild(modalEl);
+  }
+  function openModal(build) {
+    buildModal();
+    modalBodyEl.innerHTML = "";
+    build(modalBodyEl);
+    lastFocusEl = document.activeElement;
+    modalEl.removeAttribute("hidden");
+    document.documentElement.style.overflow = "hidden";
+    var c = modalEl.querySelector(".modal-close");
+    if (c) c.focus();
+  }
+  function closeModal() {
+    if (!modalEl) return;
+    modalEl.setAttribute("hidden", "");
+    document.documentElement.style.overflow = "";
+    if (lastFocusEl && lastFocusEl.focus) lastFocusEl.focus();
+  }
+  function makeInteractive(card, build) {
+    card.classList.add("tap");
+    card.setAttribute("role", "button");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-haspopup", "dialog");
+    card.addEventListener("click", function (ev) {
+      if (ev.target.closest && ev.target.closest("button, a")) return;
+      openModal(build);
+    });
+    card.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); openModal(build); }
+    });
+  }
+  function certDetail(c) {
+    return function (body) {
+      var top = el("div", "modal-cert-top");
+      top.appendChild(el("div", "cert-badge" + (c.badgeAccent ? " amber" : ""), c.badge));
+      var t = el("div");
+      t.appendChild(el("h3", "modal-title", c.name));
+      t.appendChild(el("div", "cert-issuer", c.issuer));
+      top.appendChild(t);
+      body.appendChild(top);
+      if (c.description) { var p = el("p", "modal-text"); rich(p, c.description); body.appendChild(p); }
+      if (c.meta) body.appendChild(el("div", "cert-meta", c.meta));
+      if (c.credentialId) {
+        var cred = el("div", "cert-cred");
+        cred.appendChild(document.createTextNode("Credential ID: "));
+        cred.appendChild(el("span", "mono", c.credentialId));
+        body.appendChild(cred);
+      }
+    };
+  }
+  function jobDetail(j) {
+    return function (body) {
+      body.appendChild(el("div", "modal-kicker", j.company + (j.current ? " \u00b7 Current role" : "")));
+      body.appendChild(el("h3", "modal-title", j.role));
+      body.appendChild(el("div", "job-meta", (j.period || "") + " \u00b7 " + (j.location || "")));
+      var ul = el("ul", "modal-list");
+      (j.bullets || []).forEach(function (b) { var li = el("li"); rich(li, b); ul.appendChild(li); });
+      body.appendChild(ul);
+      if (j.tags && j.tags.length) {
+        var tags = el("div", "job-tags");
+        j.tags.forEach(function (t) { tags.appendChild(el("span", "tag" + (t.hot ? " hot" : ""), t.label)); });
+        body.appendChild(tags);
+      }
+    };
+  }
+  function skillDetail(c) {
+    return function (body) {
+      body.appendChild(el("div", "modal-kicker", "Skills"));
+      body.appendChild(el("h3", "modal-title", c.category));
+      if (c.blurb) body.appendChild(el("p", "modal-text", c.blurb));
+      var pills = el("div", "pills");
+      pills.style.marginTop = "14px";
+      (c.items || []).forEach(function (p) { pills.appendChild(el("span", "pill" + (p.core ? " core" : ""), p.label)); });
+      body.appendChild(pills);
+      body.appendChild(el("p", "modal-note", "Gold pills are daily drivers."));
+    };
+  }
+  function trackDetail(t) {
+    return function (body) {
+      body.appendChild(el("div", "modal-kicker", "The Dojo \u00b7 Track"));
+      body.appendChild(el("h3", "modal-title", t.title));
+      body.appendChild(el("span", "status " + (t.statusClass || "next"), t.status));
+      var p = el("p", "modal-text"); rich(p, t.description); body.appendChild(p);
+      var bar = el("div", "bar");
+      var fill = el("i");
+      fill.style.width = String(t.progress || 0) + "%";
+      bar.appendChild(fill);
+      body.appendChild(bar);
+      body.appendChild(el("p", "modal-note", "Progress: " + (t.progress || 0) + "% \u00b7 Passed projects publish to the build log below."));
+    };
+  }
+  function eduDetail(edu) {
+    return function (body) {
+      body.appendChild(el("div", "modal-kicker", "Education"));
+      body.appendChild(el("h3", "modal-title", edu.degree));
+      body.appendChild(el("div", "cert-issuer", edu.school));
+      var p = el("p", "modal-text"); rich(p, edu.description); body.appendChild(p);
+      var em = el("div", "edu-meta");
+      (edu.tags || []).forEach(function (t) { em.appendChild(el("span", "tag" + (t.hot ? " hot" : ""), t.label)); });
+      body.appendChild(em);
+    };
+  }
+  function logDetail(en) {
+    return function (body) {
+      body.appendChild(el("div", "modal-kicker", "Build log" + (en.date ? " \u00b7 " + en.date : "")));
+      body.appendChild(el("h3", "modal-title", en.title));
+      var p = el("p", "modal-text"); rich(p, en.summary); body.appendChild(p);
+      if (en.tags && en.tags.length) {
+        var tg = el("div", "log-tags");
+        en.tags.forEach(function (t) { tg.appendChild(el("span", "tag", t)); });
+        body.appendChild(tg);
+      }
+      if (en.link) {
+        var a = el("a", "log-link", "Read the build log");
+        a.href = safeHref(en.link);
+        body.appendChild(a);
+      }
+    };
+  }
+
   function renderHero(h) {
     var root = document.getElementById("heroInner");
     if (!root || !h) return;
@@ -501,6 +683,7 @@
     (h.stats || []).forEach(function (s) {
       var st = el("div", "stat");
       var num = el("div", "num");
+      if (/^\d+$/.test(String(s.value || ""))) num.setAttribute("data-count", String(s.value));
       num.appendChild(document.createTextNode(s.value || ""));
       if (s.suffix) num.appendChild(el("em", null, s.suffix));
       st.appendChild(num);
@@ -582,6 +765,8 @@
         });
         card.appendChild(tags);
       }
+      card.appendChild(el("span", "card-hint", "View details"));
+      makeInteractive(card, jobDetail(j));
       art.appendChild(card);
       tl.appendChild(art);
     });
@@ -622,6 +807,8 @@
         pills.appendChild(el("span", "pill" + (p.core ? " core" : ""), p.label));
       });
       card.appendChild(pills);
+      card.appendChild(el("span", "card-hint", "View details"));
+      makeInteractive(card, skillDetail(c));
       grid.appendChild(card);
     });
     root.appendChild(grid);
@@ -646,7 +833,9 @@
         cred.appendChild(el("span", "mono", c.credentialId));
         inner.appendChild(cred);
       }
+      inner.appendChild(el("span", "card-hint", "View details"));
       card.appendChild(inner);
+      makeInteractive(card, certDetail(c));
       grid.appendChild(card);
     });
     root.appendChild(grid);
@@ -667,7 +856,9 @@
       em.appendChild(el("span", "tag" + (t.hot ? " hot" : ""), t.label));
     });
     inner.appendChild(em);
+    inner.appendChild(el("span", "card-hint", "View details"));
     card.appendChild(inner);
+    makeInteractive(card, eduDetail(edu));
     root.appendChild(card);
   }
 
@@ -709,6 +900,8 @@
         fill.setAttribute("data-bar", String(t.progress));
         bar.appendChild(fill);
         card.appendChild(bar);
+        card.appendChild(el("span", "card-hint", "View details"));
+        makeInteractive(card, trackDetail(t));
         tg.appendChild(card);
       });
       root.appendChild(tg);
@@ -732,6 +925,7 @@
           a.href = safeHref(en.link);
           art.appendChild(a);
         }
+        makeInteractive(art, logDetail(en));
         list.appendChild(art);
       });
       root.appendChild(list);
@@ -831,13 +1025,13 @@
         entries.forEach(function (e) {
           if (e.isIntersecting) {
             e.target.animate(
-              [{ opacity: 0.25, transform: "translateY(12px)" }, { opacity: 1, transform: "translateY(0)" }],
-              { duration: 550, easing: "ease-out" }
+              [{ opacity: 0, transform: "translateY(16px) scale(0.99)" }, { opacity: 1, transform: "translateY(0) scale(1)" }],
+              { duration: 650, easing: "cubic-bezier(0.22, 0.61, 0.36, 1)" }
             );
             io.unobserve(e.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.12 });
       document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
 
       var bio = new IntersectionObserver(function (entries) {
@@ -901,6 +1095,24 @@
     }
     window.addEventListener("scroll", spy, { passive: true });
     spy();
+
+    /* ---- hero stat count-up ---- */
+    if (!reduceMotion && window.requestAnimationFrame) {
+      document.querySelectorAll(".stat .num[data-count]").forEach(function (num) {
+        var target = parseInt(num.getAttribute("data-count"), 10);
+        var node = num.firstChild;
+        if (isNaN(target) || !node || node.nodeType !== 3) return;
+        var start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / 900, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          node.nodeValue = String(Math.round(target * eased));
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
 
     /* ---- copy email ---- */
     var copyBtn = document.getElementById("copyEmail");
