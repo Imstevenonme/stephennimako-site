@@ -353,6 +353,10 @@
       .modal-cert-top .modal-title { padding-right: 0; }
       .modal .bar { margin-top: 14px; }
       .modal .status { margin-top: 10px; }
+
+      /* official certification badge artwork (Credly-issued images) */
+      .cert-badge-img { width: 64px; height: 64px; flex: none; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(10, 10, 15, 0.18)); }
+      .modal-cert-top .cert-badge-img { width: 104px; height: 104px; }
 </style>
   </head>
   <body>
@@ -525,10 +529,21 @@
       if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); openModal(build); }
     });
   }
+  function certBadgeEl(c) {
+    if (c.badgeImg) {
+      var img = document.createElement("img");
+      img.className = "cert-badge-img";
+      img.src = c.badgeImg;
+      img.alt = (c.name || "") + " \u00b7 official badge";
+      img.loading = "lazy";
+      return img;
+    }
+    return el("div", "cert-badge" + (c.badgeAccent ? " amber" : ""), c.badge);
+  }
   function certDetail(c) {
     return function (body) {
       var top = el("div", "modal-cert-top");
-      top.appendChild(el("div", "cert-badge" + (c.badgeAccent ? " amber" : ""), c.badge));
+      top.appendChild(certBadgeEl(c));
       var t = el("div");
       t.appendChild(el("h3", "modal-title", c.name));
       t.appendChild(el("div", "cert-issuer", c.issuer));
@@ -822,7 +837,7 @@
     var grid = el("div", "cert-grid");
     certs.forEach(function (c) {
       var card = el("div", "cert-card reveal");
-      card.appendChild(el("div", "cert-badge" + (c.badgeAccent ? " amber" : ""), c.badge));
+      card.appendChild(certBadgeEl(c));
       var inner = el("div");
       inner.appendChild(el("h3", null, c.name));
       inner.appendChild(el("div", "cert-issuer", c.issuer));
