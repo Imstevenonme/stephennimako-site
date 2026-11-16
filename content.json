@@ -538,6 +538,7 @@
       "issuer": "Cisco",
       "date": null,
       "badge": "CCNA",
+      "badgeImg": "badges/cisco-ccna.png",
       "badgeAccent": false,
       "description": "Routing, switching, IP services, security fundamentals, and automation — earned September 2026.",
       "meta": "Issued: Sep 24, 2026 · Valid through Sep 24, 2029 · Verification ID: NECDZVMCN896PDJ2",
