@@ -1157,7 +1157,7 @@
      sit on stale content after a deploy. The version query makes each
      content release a new URL, and cache:"no-cache" forces revalidation.
      BUMP CONTENT_VERSION whenever content.json changes. */
-  var CONTENT_VERSION = "2026-11-17.1";
+  var CONTENT_VERSION = "2026-11-17.2";
   fetch("content.json?v=" + CONTENT_VERSION, { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error("content.json: " + r.status); return r.json(); })
     .then(function (data) {

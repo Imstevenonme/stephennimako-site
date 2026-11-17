@@ -112,7 +112,10 @@
       "bullets": [
         "**Senior desktop support** for Quest Software's Austin site — advanced endpoint troubleshooting and the escalation point for issues that don't resolve at first touch.",
         "Deploy, image, and maintain workstations across their lifecycle — including new-hire setup, so people are productive on day one.",
-        "Support users across **Windows, Microsoft 365, and Active Directory / Entra ID** — root-cause fixes and clear documentation over workarounds."
+        "Support users across **Windows, Microsoft 365, and Active Directory / Entra ID** — root-cause fixes and clear documentation over workarounds.",
+        "Own tickets end to end in **ServiceNow** — diagnosis, resolution, and the kind of close-out notes the next engineer can actually use.",
+        "Handle the escalations that stall at L1/L2: application failures, profile and policy issues, and hardware faults that need evidence, not guesses.",
+        "Keep the endpoint fleet healthy — imaging standards, patching, and configuration consistency across the site's Windows workstations."
       ],
       "tags": [
         {
@@ -138,6 +141,14 @@
         {
           "label": "Escalations",
           "hot": false
+        },
+        {
+          "label": "ServiceNow",
+          "hot": false
+        },
+        {
+          "label": "Windows 11",
+          "hot": false
         }
       ]
     },
@@ -151,7 +162,11 @@
         "**Sole IT for the entire site** — acting team lead for 2 IT Support II technicians and 4 equipment coordinators, primary on-call, and the point of contact senior operations leadership escalates to.",
         "Run site infrastructure end to end: **AWS Outposts**, the WAN room (AT&T carrier circuits, fiber plant, ISP/vendor coordination), **Cisco Catalyst 9200/9300** core and access switching, Dell towers and PowerEdge servers, and domain controllers.",
         "Delivered an **800+ camera deployment** for the facility; own DHCP reservations, IP migrations, and thin-client provisioning across the site.",
-        "Known for **permanent fixes**: trace recurring issues to root cause and write the SOPs the team resolves them with at first touch. Ticketing in ServiceNow and SIMT."
+        "Known for **permanent fixes**: trace recurring issues to root cause and write the SOPs the team resolves them with at first touch. Ticketing in ServiceNow and SIMT.",
+        "Configure and troubleshoot **Catalyst switching and Cisco Meraki** — VLANs, trunks, PoE budgets, and port-level fault isolation.",
+        "Primary on-call across **700–900 endpoints on site (3,000+ across the node)** — incidents owned from first page to verified resolution.",
+        "Run **identity and access** in Active Directory and Entra ID — account provisioning and deprovisioning, permissions, MFA, and SSO, kept audit-ready.",
+        "**PowerShell automation** for the repetitive work, plus ITIL-aligned service delivery: knowledge-base articles, SOPs, and vendor / field-team coordination."
       ],
       "tags": [
         {
@@ -185,6 +200,18 @@
         {
           "label": "On-Call",
           "hot": false
+        },
+        {
+          "label": "Meraki",
+          "hot": false
+        },
+        {
+          "label": "VLANs / PoE",
+          "hot": false
+        },
+        {
+          "label": "PowerShell",
+          "hot": false
         }
       ]
     },
@@ -197,7 +224,9 @@
       "bullets": [
         "Acted as an **internal MSP** — the branch-to-branch escalation point for network and systems issues across a multi-site healthcare provider.",
         "Administered **Azure** (VM and device admin), **Microsoft 365 and Entra ID** (licensing, SharePoint, OneDrive, Teams), with PowerShell / Microsoft Graph and Power Automate / Power Apps in the toolkit.",
-        "Endpoint management with **Intune, System Center (SCCM), and Apple Business Manager**; HIPAA-trained, supporting systems under patient-privacy rules."
+        "Endpoint management with **Intune, System Center (SCCM), and Apple Business Manager**; HIPAA-trained, supporting systems under patient-privacy rules.",
+        "Tier 1–2 support for **300+ endpoints** — Windows 10/11, Microsoft 365, Intune-managed devices, and VPN connectivity for remote staff.",
+        "Ran **Exchange Online** administration — mailboxes, distribution groups, MFA, and SSO — alongside the AD / Entra ID account lifecycle."
       ],
       "tags": [
         {
@@ -227,6 +256,14 @@
         {
           "label": "HIPAA",
           "hot": false
+        },
+        {
+          "label": "Exchange Online",
+          "hot": false
+        },
+        {
+          "label": "VPN",
+          "hot": false
         }
       ]
     },
@@ -237,7 +274,9 @@
       "location": "Nashville, TN",
       "current": false,
       "bullets": [
-        "Front-line IT support — troubleshooting hardware, software, and connectivity issues for end users, with escalations documented and tracked through the ticketing queue."
+        "Front-line IT support — troubleshooting hardware, software, and connectivity issues for end users, with escalations documented and tracked through the ticketing queue.",
+        "Workstation setup and lifecycle work: imaging, peripheral configuration, and account access so new users start clean.",
+        "Supported **Windows and macOS** side by side — OS issues, application installs, printers, and network connectivity faults."
       ],
       "tags": [
         {
@@ -261,7 +300,9 @@
       "location": "Ghana",
       "current": false,
       "bullets": [
-        "Desktop support engineering for one of Ghana's largest electronics and IT retailers — diagnosing and repairing systems, supporting users, and keeping machines in service."
+        "Desktop support engineering for one of Ghana's largest electronics and IT retailers — diagnosing and repairing systems, supporting users, and keeping machines in service.",
+        "Component-level repair and upgrades — RAM, storage, and power supplies — plus OS imaging, driver recovery, and malware removal.",
+        "Data backup and recovery on failing drives, with honest turnaround calls on repair vs. replace."
       ],
       "tags": [
         {
@@ -285,7 +326,9 @@
       "location": "Accra, Ghana",
       "current": false,
       "bullets": [
-        "Where the career started: three years of hands-on desktop support — builds, break/fix, user support, and the fundamentals everything since is built on."
+        "Where the career started: three years of hands-on desktop support — builds, break/fix, user support, and the fundamentals everything since is built on.",
+        "Custom PC builds and hardware upgrades, Windows deployment and imaging, and structured cabling / connectivity basics.",
+        "Learned the trade the right way: document the ticket, fix the cause, and leave the machine better than it was found."
       ],
       "tags": [
         {
