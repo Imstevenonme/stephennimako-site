@@ -13,7 +13,7 @@
     "intro": "Senior Desktop Support Engineer at Quest Software in Austin, TX — senior-level desktop and endpoint support, and the escalation point when the standard fixes aren't enough.",
     "ctas": [
       {
-        "label": "View R\u00e9sum\u00e9",
+        "label": "View Résumé",
         "href": "resume.pdf",
         "style": "primary",
         "icon": "doc",
@@ -53,9 +53,9 @@
         "label": "Cameras deployed in a single facility rollout at Amazon"
       },
       {
-        "value": "4",
+        "value": "5",
         "suffix": "",
-        "label": "Active certifications — AWS ×2, Cisco CCNA, CompTIA Network+"
+        "label": "Active certifications — AWS ×2, Cisco CCNA, CompTIA Network+, ITIL 4"
       },
       {
         "value": "3",
@@ -565,6 +565,17 @@
       "description": "Networking concepts, infrastructure, operations, and troubleshooting across wired and wireless networks.",
       "meta": "Status: Active",
       "credentialId": null
+    },
+    {
+      "name": "ITIL® 4 Foundation",
+      "issuer": "PeopleCert",
+      "date": null,
+      "badge": "ITIL",
+      "badgeImg": "badges/itil-4-foundation.png",
+      "badgeAccent": false,
+      "description": "IT service management — key concepts, the guiding principles, the four dimensions, and the service value system. Also completed WGU's D336.",
+      "meta": "Issued: Nov 17, 2026 · Score: 80% (32/40)",
+      "credentialId": null
     }
   ],
   "education": {
@@ -777,8 +788,8 @@
     },
     "certifications": {
       "heading": "Certifications",
-      "note": "4 active",
-      "sub": "Verified credentials across cloud architecture, networking, and IT fundamentals."
+      "note": "5 active",
+      "sub": "Verified credentials across cloud architecture, networking, service management, and IT fundamentals."
     },
     "education": {
       "heading": "Education"
