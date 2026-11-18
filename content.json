@@ -617,8 +617,9 @@
       "badgeImg": "badges/itil-4-foundation.png",
       "badgeAccent": false,
       "description": "IT service management — key concepts, the guiding principles, the four dimensions, and the service value system. Also completed WGU's D336.",
-      "meta": "Issued: Nov 17, 2026 · Score: 80% (32/40)",
-      "credentialId": null
+      "meta": "Issued: Nov 16, 2026 · Valid through Nov 17, 2029 · Score: 80% (32/40)",
+      "credentialId": "GR671913923SN",
+      "certFile": "certs/itil-4-foundation.pdf"
     }
   ],
   "education": {
