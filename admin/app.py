@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Portfolio admin portal — Tailscale/LAN-only content editor for stephennimako.com.
+"""Portfolio admin portal — Tailscale/LAN-only content editor for stephennimakojr.com.
 
 Edits /var/www/portfolio/content.json. Every save keeps a timestamped backup.
 Only keys declared in SECTION_SPECS are modified; everything else in the JSON
@@ -215,7 +215,7 @@ CHROME = """<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Portfolio Admin — {title}</title><style>{css}</style></head>
 <body><div class="wrap">
-<div class="topbar"><div><strong>Portfolio Admin</strong> <span class="count">stephennimako.com</span></div>
+<div class="topbar"><div><strong>Portfolio Admin</strong> <span class="count">stephennimakojr.com</span></div>
 <div><a href="{dash}">Dashboard</a><a href="{logout}">Log out</a></div></div>
 {body}</div></body></html>"""
 

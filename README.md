@@ -1,6 +1,6 @@
 # Stephen Nimako Jr — Career Site
 
-Source for [stephennimako.com](https://stephennimako.com), Stephen Nimako Jr's
+Source for [stephennimakojr.com](https://stephennimakojr.com), Stephen Nimako Jr's
 personal career / portfolio site: IT infrastructure & support engineering,
 experience, skills, certifications, education, and the Dojo build log.
 
@@ -22,7 +22,7 @@ experience, skills, certifications, education, and the Dojo build log.
 
 Self-hosted on a Debian 12 LXC (`portfolio`) on Stephen's own Proxmox host.
 Caddy serves `/var/www/portfolio/` and a Cloudflare Tunnel publishes it as
-https://stephennimako.com — no inbound ports are open on the router.
+https://stephennimakojr.com — no inbound ports are open on the router.
 
 ## Editing content
 
