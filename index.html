@@ -388,22 +388,41 @@
         --chip: #efece4; --shadow: 0 10px 30px rgba(20, 22, 26, 0.08);
       }
       .theme-toggle {
-        margin-left: 10px; width: 38px; height: 38px; flex: none;
-        border-radius: 50%; border: 1px solid var(--line-strong);
-        background: var(--surface); color: var(--accent);
+        position: relative;
+        margin-left: 10px; width: 40px; height: 40px; flex: none;
+        border-radius: 50%;
+        border: 1.5px solid var(--accent);
+        background: radial-gradient(circle at 32% 28%, var(--accent-soft) 0%, var(--surface) 74%);
+        color: var(--accent);
         display: grid; place-items: center; cursor: pointer;
+        box-shadow: 0 5px 16px rgba(20, 22, 26, 0.16), 0 0 0 4px color-mix(in srgb, var(--accent) 13%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.4);
         animation: theme-bounce 2.6s ease-in-out infinite;
+        transition: box-shadow 0.2s ease, border-color 0.2s ease;
       }
-      .theme-toggle svg { width: 18px; height: 18px; display: block; }
-      .theme-toggle:hover { border-color: var(--accent); }
+      .theme-toggle::after {
+        content: ""; position: absolute; inset: -1.5px; border-radius: 50%;
+        border: 1.5px solid var(--accent); opacity: 0; pointer-events: none;
+        animation: theme-ring 2.6s ease-out infinite;
+      }
+      .theme-toggle svg { width: 19px; height: 19px; display: block; animation: theme-icon-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+      .theme-toggle:hover { border-color: var(--accent-bright); box-shadow: 0 8px 22px rgba(20, 22, 26, 0.2), 0 0 0 6px color-mix(in srgb, var(--accent) 20%, transparent), 0 0 18px color-mix(in srgb, var(--accent) 45%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.4); }
       .theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
       .theme-toggle.seen { animation: none; }
+      .theme-toggle.seen::after { animation: none; }
       @keyframes theme-bounce {
         0%, 55%, 100% { transform: translateY(0); }
         10% { transform: translateY(-6px); }
         20% { transform: translateY(0); }
         30% { transform: translateY(-4px); }
         40% { transform: translateY(0); }
+      }
+      @keyframes theme-ring {
+        0% { transform: scale(1); opacity: 0.55; }
+        45%, 100% { transform: scale(1.5); opacity: 0; }
+      }
+      @keyframes theme-icon-in {
+        from { transform: scale(0.4) rotate(-40deg); opacity: 0; }
+        to { transform: scale(1) rotate(0deg); opacity: 1; }
       }
 </style>
   </head>
