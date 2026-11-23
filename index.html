@@ -252,6 +252,8 @@
       /* education */
       .edu-card { display: flex; gap: 18px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); margin-top: 26px; }
       .edu-mark { width: 64px; height: 64px; flex: none; display: grid; place-items: center; border-radius: 16px; background: var(--accent-soft); color: var(--accent); font-family: "Sora", sans-serif; font-weight: 800; font-size: 20px; }
+      .edu-mark.edu-logo { width: auto; height: 64px; padding: 10px 14px; background: #fff; }
+      .edu-mark.edu-logo img { height: 100%; width: auto; display: block; }
       .edu-card h3 { font-size: 18px; }
       .edu-school { color: var(--ink-2); font-weight: 600; font-size: 14.5px; margin-top: 2px; }
       .edu-card p { color: var(--ink-2); font-size: 14.5px; margin: 10px 0 0; }
@@ -870,7 +872,16 @@
     if (!root || !edu) return;
     root.appendChild(secHead("education", meta));
     var card = el("div", "edu-card reveal");
-    card.appendChild(el("div", "edu-mark", edu.mark));
+    if (edu.logo) {
+      var mark = el("div", "edu-mark edu-logo");
+      var lg = el("img");
+      lg.src = edu.logo;
+      lg.alt = edu.school + " logo";
+      mark.appendChild(lg);
+      card.appendChild(mark);
+    } else {
+      card.appendChild(el("div", "edu-mark", edu.mark));
+    }
     var inner = el("div");
     inner.appendChild(el("h3", null, edu.degree));
     inner.appendChild(el("div", "school", edu.school));
