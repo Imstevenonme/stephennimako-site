@@ -24,6 +24,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet" />
+    <script>
+      try { var __t = localStorage.getItem('snj-theme'); if (__t === 'dark' || __t === 'light') document.documentElement.setAttribute('data-theme', __t); } catch (e) {}
+    </script>
     <style>
       :root {
         color-scheme: light dark;
@@ -366,6 +369,42 @@
       /* official certification badge artwork (Credly-issued images) */
       .cert-badge-img { width: 64px; height: 64px; flex: none; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(10, 10, 15, 0.18)); }
       .modal-cert-top .cert-badge-img { width: 104px; height: 104px; }
+
+      /* ---------- manual theme toggle (2026-11-22) ---------- */
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0a0c10; --bg-2: #0e1116; --surface: #12151c; --surface-2: #161a22;
+        --ink: #eef0f3; --ink-2: #b7bdc7; --ink-3: #7e8694;
+        --line: #232833; --line-strong: #333b4a;
+        --accent: #f0b64c; --accent-bright: #ffc95e; --accent-soft: #2a2113;
+        --chip: #1b2029; --shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+      }
+      :root[data-theme="light"] {
+        color-scheme: light;
+        --bg: #f6f5f1; --bg-2: #efede7; --surface: #ffffff; --surface-2: #faf9f6;
+        --ink: #14161a; --ink-2: #454b54; --ink-3: #6d747e;
+        --line: #e0ddd3; --line-strong: #c9c5b8;
+        --accent: #9a6206; --accent-bright: #b97a0d; --accent-soft: #f3e3c8;
+        --chip: #efece4; --shadow: 0 10px 30px rgba(20, 22, 26, 0.08);
+      }
+      .theme-toggle {
+        margin-left: 10px; width: 38px; height: 38px; flex: none;
+        border-radius: 50%; border: 1px solid var(--line-strong);
+        background: var(--surface); color: var(--accent);
+        display: grid; place-items: center; cursor: pointer;
+        animation: theme-bounce 2.6s ease-in-out infinite;
+      }
+      .theme-toggle svg { width: 18px; height: 18px; display: block; }
+      .theme-toggle:hover { border-color: var(--accent); }
+      .theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+      .theme-toggle.seen { animation: none; }
+      @keyframes theme-bounce {
+        0%, 55%, 100% { transform: translateY(0); }
+        10% { transform: translateY(-6px); }
+        20% { transform: translateY(0); }
+        30% { transform: translateY(-4px); }
+        40% { transform: translateY(0); }
+      }
 </style>
   </head>
   <body>
@@ -382,6 +421,7 @@
           <a href="#path">The Path</a>
           <a href="#contact">Contact</a>
         </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"></button>
       </div>
     </nav>
 
@@ -1205,5 +1245,32 @@
 })();
 </script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e29ff9e2b9ae42a5a8dd2954d6984621"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
+    <script>
+      (function () {
+        var btn = document.getElementById('themeToggle');
+        if (!btn) return;
+        var MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        var SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>';
+        function effective() {
+          var t = document.documentElement.getAttribute('data-theme');
+          if (t === 'dark' || t === 'light') return t;
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        function render() {
+          var dark = effective() === 'dark';
+          btn.innerHTML = dark ? SUN : MOON;
+          btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+          btn.title = dark ? 'Light mode' : 'Dark mode';
+        }
+        btn.addEventListener('click', function () {
+          var next = effective() === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('snj-theme', next); } catch (e) {}
+          btn.classList.add('seen');
+          render();
+        });
+        render();
+      })();
+    </script>
+  </body>
 </html>
