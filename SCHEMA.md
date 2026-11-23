@@ -29,7 +29,7 @@ The only intentional text split is `hero.intro` / `hero.tagline` (see below).
   "experience":     [ { "company", "role", "period", "location", "current", "bullets", "tags" } ],
   "skills":         [ { "category", "blurb", "group", "icon", "items" } ],
   "certifications": [ { "name", "issuer", "date", "badge", "badgeAccent", "description", "meta", "credentialId" } ],
-  "education":      { "school", "degree", "period", "mark", "description", "details", "tags" },
+  "education":      { "school", "degree", "period", "mark", "logo", "description", "details", "tags" },
   "dojo":           [ { "title", "date", "summary", "tags", "link" } ],
   "dojo_loop":      { "title", "text", "steps" },
   "dojo_tracks":    [ { "title", "status", "statusClass", "description", "progress" } ],
@@ -95,7 +95,9 @@ heading), `paragraphs` (3, with `**bold**`), and `facts`: `{ "title": "Quick fac
 `school` (`"Western Governors University"`), `degree`
 (`"B.S. Cloud and Network Engineering"`), `period`
 (`"In progress since June 2026, expected February 2027"` — verbatim from the
-card copy), `mark` (`"WGU"` — the card monogram), `description` (card
+card copy), `mark` (`"WGU"` — the card monogram), `logo` (`"wgu-logo.png"` —
+optional; when set, the card shows the school logo on a white tile instead of
+the monogram), `description` (card
 paragraph), `details` (plain label list, schema-conformant), `tags`
 (`{ "label", "hot" }` — the rendered pills; `"Cloud + Network Engineering"` is hot).
 
