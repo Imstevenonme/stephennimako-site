@@ -174,3 +174,14 @@ those objects.)
 If `content.json` fails to load or parse, sections are left empty and the
 page still works (nav, footer, scroll-spy); nothing throws. The copy-email
 button falls back to the original address.
+
+## Theme toggle
+
+The nav carries a light/dark toggle button (static chrome in `index.html`,
+not content-driven). The site palette is CSS variables: `:root` holds the
+light theme, `@media (prefers-color-scheme: dark)` the dark one, and
+`:root[data-theme="dark"|"light"]` overrides let a visitor's manual choice
+win over their OS setting. The choice persists in `localStorage`
+(`snj-theme`); with no saved choice the OS setting rules. The button face
+is a real image — `theme-moon.png` (shown in light mode) and
+`theme-sun.png` (shown in dark mode), 128x128 PNGs in the repo root.
