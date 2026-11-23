@@ -28,7 +28,7 @@ The only intentional text split is `hero.intro` / `hero.tagline` (see below).
   "about":          { "heading", "note", "paragraphs", "facts" },
   "experience":     [ { "company", "role", "period", "location", "current", "bullets", "tags" } ],
   "skills":         [ { "category", "blurb", "group", "icon", "items" } ],
-  "certifications": [ { "name", "issuer", "date", "badge", "badgeAccent", "description", "meta", "credentialId" } ],
+  "certifications": [ { "name", "issuer", "date", "badge", "badgeImg", "badgeAccent", "description", "meta", "credentialId" } ],
   "education":      { "school", "degree", "period", "mark", "logo", "description", "details", "tags" },
   "dojo":           [ { "title", "date", "summary", "tags", "link" } ],
   "dojo_loop":      { "title", "text", "steps" },
@@ -85,6 +85,7 @@ heading), `paragraphs` (3, with `**bold**`), and `facts`: `{ "title": "Quick fac
 | `name` / `issuer` | e.g. `"AWS Certified Solutions Architect — Professional"` / `"Amazon Web Services"` |
 | `date` | `null` for all — the original carries no standalone date field; dates live verbatim inside `meta` |
 | `badge` | short badge text (`"SA·P"`, `"CCNA"`, `"CP"`, `"N+"`) |
+| `badgeImg` | path to the official badge image (e.g. `"badges/aws-sa-pro.png"`) — when set, the card and detail modal show the real badge instead of the text tile |
 | `badgeAccent` | bool — `true` renders `class="cert-badge amber"` (only SA·P) |
 | `description` | card paragraph |
 | `meta` | verbatim meta line, e.g. `"Issued: Sep 24, 2026 · Valid through Sep 24, 2029 · Verification ID: NECDZVMCN896PDJ2"` or `"Status: Active"` |
