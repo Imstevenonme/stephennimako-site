@@ -392,8 +392,7 @@
         margin-left: 10px; width: 40px; height: 40px; flex: none;
         border-radius: 50%;
         border: 1.5px solid var(--accent);
-        background: radial-gradient(circle at 32% 28%, var(--accent-soft) 0%, var(--surface) 74%);
-        color: var(--accent);
+        padding: 0; overflow: hidden; background: var(--surface);
         display: grid; place-items: center; cursor: pointer;
         box-shadow: 0 5px 16px rgba(20, 22, 26, 0.16), 0 0 0 4px color-mix(in srgb, var(--accent) 13%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.4);
         animation: theme-bounce 2.6s ease-in-out infinite;
@@ -404,7 +403,7 @@
         border: 1.5px solid var(--accent); opacity: 0; pointer-events: none;
         animation: theme-ring 2.6s ease-out infinite;
       }
-      .theme-toggle svg { width: 19px; height: 19px; display: block; animation: theme-icon-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+      .theme-toggle img { width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 50%; user-select: none; -webkit-user-drag: none; animation: theme-icon-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
       .theme-toggle:hover { border-color: var(--accent-bright); box-shadow: 0 8px 22px rgba(20, 22, 26, 0.2), 0 0 0 6px color-mix(in srgb, var(--accent) 20%, transparent), 0 0 18px color-mix(in srgb, var(--accent) 45%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.4); }
       .theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
       .theme-toggle.seen { animation: none; }
@@ -440,7 +439,7 @@
           <a href="#path">The Path</a>
           <a href="#contact">Contact</a>
         </div>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"></button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><img id="themeImg" src="theme-moon.png" alt="" draggable="false"></button>
       </div>
     </nav>
 
@@ -1268,8 +1267,8 @@
       (function () {
         var btn = document.getElementById('themeToggle');
         if (!btn) return;
-        var MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-        var SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>';
+        var img = document.getElementById('themeImg');
+        ['theme-sun.png', 'theme-moon.png'].forEach(function (u) { var i = new Image(); i.src = u; });
         function effective() {
           var t = document.documentElement.getAttribute('data-theme');
           if (t === 'dark' || t === 'light') return t;
@@ -1277,7 +1276,7 @@
         }
         function render() {
           var dark = effective() === 'dark';
-          btn.innerHTML = dark ? SUN : MOON;
+          if (img) img.src = dark ? 'theme-sun.png' : 'theme-moon.png';
           btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
           btn.title = dark ? 'Light mode' : 'Dark mode';
         }
