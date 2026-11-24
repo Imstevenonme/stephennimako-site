@@ -427,10 +427,10 @@
   <style>
 .guide3d{display:flex;align-items:center;gap:20px;margin:36px auto;max-width:760px}
 .guide3d img,.guide3d video{width:86px;height:auto;flex:none;filter:drop-shadow(0 10px 16px rgba(0,0,0,.45))}
-.resume-buddy{width:52px;height:auto;vertical-align:bottom;margin:0 8px 0 2px;transform:translateY(12px);filter:drop-shadow(0 8px 14px rgba(0,0,0,.4))}
+.resume-buddy{position:absolute;left:-60px;bottom:0;width:52px;height:auto;pointer-events:none;filter:drop-shadow(0 8px 14px rgba(0,0,0,.4))}
 .guide3d p{font-size:1.05rem;line-height:1.55;margin:0}
 .guide3d.flip{flex-direction:row-reverse;text-align:right}
-@media (max-width:640px){.guide3d,.guide3d.flip{flex-direction:column;text-align:center}.guide3d img,.guide3d video{width:72px}.resume-buddy{width:40px;margin-right:6px;transform:translateY(9px)}}
+@media (max-width:640px){.guide3d,.guide3d.flip{flex-direction:column;text-align:center}.guide3d img,.guide3d video{width:72px}.resume-buddy{left:12px;top:-42px;bottom:auto;width:36px}}
 </style>
 </head>
   <body>
@@ -1303,6 +1303,6 @@
       })();
     </script>
   <!-- build retrigger 2026-11-24 -->
-<script>(function(){var tries=0;var t=setInterval(function(){var a=document.querySelector('a[href$="resume.pdf"]');if(a){clearInterval(t);if(!document.getElementById('resumeBuddy')){var img=document.createElement('img');img.id='resumeBuddy';img.className='resume-buddy';img.src='3d/stephen-pointing.png';img.alt='3D Stephen pointing at the resume button';a.parentNode.insertBefore(img,a);}}else if(++tries>40){clearInterval(t);}},250);})();</script>
+<script>(function(){var tries=0;var t=setInterval(function(){var a=document.querySelector('a[href$="resume.pdf"]');if(a){clearInterval(t);if(!document.getElementById('resumeBuddy')){a.style.position='relative';var img=document.createElement('img');img.id='resumeBuddy';img.className='resume-buddy';img.src='3d/stephen-pointing.png';img.alt='3D Stephen pointing at the resume button';a.insertBefore(img,a.firstChild);}}else if(++tries>40){clearInterval(t);}},250);})();</script>
 </body>
 </html>
